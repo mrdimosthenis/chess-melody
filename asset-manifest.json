@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/chess-melody/static/css/main.4b970229.css",
+    "main.js": "/chess-melody/static/js/main.f4eb8284.js",
+    "static/js/453.91037169.chunk.js": "/chess-melody/static/js/453.91037169.chunk.js",
+    "index.html": "/chess-melody/index.html",
+    "main.4b970229.css.map": "/chess-melody/static/css/main.4b970229.css.map",
+    "main.f4eb8284.js.map": "/chess-melody/static/js/main.f4eb8284.js.map",
+    "453.91037169.chunk.js.map": "/chess-melody/static/js/453.91037169.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4b970229.css",
+    "static/js/main.f4eb8284.js"
+  ]
+}
