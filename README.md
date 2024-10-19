@@ -1,67 +1,74 @@
 # Chess Melody
 
-## Overview
-
-This project is a fun and interactive React application designed to help users learn the basics of chess while enjoying a musical experience. It features an interactive chessboard and integrates sound using the Tone.js library to play notes as you interact with the board. Additionally, the project celebrates checkmate with a confetti animation, making learning chess more engaging and enjoyable.
+This project is a React-based chessboard application that features interactive chess moves,
+sound effects, and confetti when checkmate occurs. The application generates arrows for
+possible moves and plays musical notes as you interact with the board.
 
 ## Features
 
-- **Interactive Chessboard**: Displays a fully functional chessboard where users can interact with pieces by clicking squares.
-- **Guided Moves**: Highlights possible moves on the board to assist users in learning chess moves.
-- **Musical Notes**: Each valid move on the board plays a musical note, creating a connection between the game and music.
-- **Checkmate Celebration**: When the game reaches a checkmate, a confetti animation is triggered, adding a fun celebratory effect.
-- **Chess Engine**: Uses the `chess.js` library to manage the game logic, such as moves, turns, and checkmate validation.
-- **Kalinka Melody**: The notes played follow a melody from the Russian folk song "Kalinka."
+- Interactive chessboard powered by the **chess.js** and **react-chessboard** libraries.
+- Musical notes corresponding to each move using **Tone.js**.
+- Confetti animation using **canvas-confetti** when a checkmate is reached.
+- Move generation and visualization through arrows that indicate available moves.
+
+## Technologies Used
+
+- **React**: For building the user interface and managing state.
+- **chess.js**: To handle chess game logic and move validation.
+- **react-chessboard**: For rendering the chessboard and handling user interactions.
+- **Tone.js**: For synthesizing musical notes when interacting with the board.
+- **canvas-confetti**: To celebrate a checkmate with confetti effects.
 
 ## Installation
 
-1. **Clone the repository**:
+1. **Clone the repository:**
    ```bash
-   git clone https://github.com/your-username/chess-melody.git
+   git clone https://github.com/mrdimosthenis/chess-melody.git
    cd chess-melody
    ```
 
-2. **Install dependencies**:
+2. **Install dependencies:**
    ```bash
    npm install
    ```
 
-3. **Run the app**:
+3. **Run the application:**
    ```bash
    npm start
    ```
 
-4. Open the application in your browser at `http://localhost:3000`.
+The app should now be running at `http://localhost:3000`.
 
-## Usage
+## How It Works
 
-1. **Interact with the Chessboard**: Click on a square to move pieces. The valid moves will be highlighted with arrows.
-2. **Musical Feedback**: Each successful move triggers a musical note. Try to make moves and follow along with the Kalinka melody.
-3. **Checkmate**: When you reach checkmate, confetti will rain down to celebrate your victory.
+- The chessboard is generated using the **Chessboard** component from the `react-chessboard` library.
+- When a square is clicked, the app generates arrows for available moves and plays a note from the **kalinka** melody
+  using `Tone.js`.
+- Once a move is completed, the board updates, and if the move results in checkmate, **confetti** is triggered.
+- The app ensures that only legal moves are made, and arrows update after each move, enhancing the visual experience.
 
-## Technologies Used
+## Code Overview
 
-- **React**: Frontend framework for building user interfaces.
-- **chess.js**: Chess library for managing chess logic, moves, and validations.
-- **react-chessboard**: Component to render and interact with the chessboard.
-- **Tone.js**: Sound library for generating and playing musical notes.
-- **Canvas-Confetti**: Used to create the confetti animation effect for checkmate celebrations.
+### `App` Component
 
-## Project Structure
+- **State:**
+    - `chess`: Holds the current state of the chess game using **chess.js**.
+    - `arrows`: An array that stores the possible move arrows.
+    - `noteIndex`: Tracks the current index of the **kalinka** melody to play the corresponding note.
+    - `isHoldState`: A flag to prevent moves while the board is processing.
 
-- **App.js**: The main component that initializes the chessboard, handles game logic, and integrates sound and animations.
-- **App.css**: Styles for the application.
-- **Chessboard & Chess Engine**: Handles game state and updates the board with moves.
+- **useEffect**:
+    - Initializes the **Tone.js** synthesizer.
+    - Generates random move arrows based on the available moves.
 
-## How it Works
+- **handleSquareClick**:
+    - Handles user interactions with the chessboard squares.
+    - Plays a note on every click and updates the arrows.
+    - If a move results in checkmate, confetti is displayed.
 
-1. The chessboard displays the current state of the game, powered by `chess.js`.
-2. The application generates arrows highlighting possible moves, guiding users to valid squares.
-3. When a valid move is made, a musical note from the Kalinka melody plays using `Tone.js`.
-4. On checkmate, the board is reset and a confetti effect is triggered to celebrate the victory.
+### Dependencies
 
-## License
-
-This project is open-source and available under the MIT License.
-
-Enjoy learning chess with music and fun animations!
+- **chess.js**: Handles chess game logic (moves, validation, checkmate).
+- **react-chessboard**: Renders the chessboard and facilitates user interaction.
+- **Tone.js**: Generates sound effects (musical notes).
+- **canvas-confetti**: Triggers confetti animations.
