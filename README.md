@@ -1,4 +1,4 @@
-# Learn Chess Basics
+# Chess Melody
 
 ## Overview
 
@@ -17,8 +17,8 @@ This project is a fun and interactive React application designed to help users l
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/your-username/learn-chess-basics.git
-   cd learn-chess-basics
+   git clone https://github.com/your-username/chess-melody.git
+   cd chess-melody
    ```
 
 2. **Install dependencies**:

@@ -1,6 +1,6 @@
 {
-  "homepage": "https://mrdimosthenis.github.io/learn-chess-basics",
-  "name": "learn-chess-basics",
+  "homepage": "https://mrdimosthenis.github.io/chess-melody",
+  "name": "chess-melody",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
